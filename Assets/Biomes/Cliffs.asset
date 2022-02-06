@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b836592dd58974745868b89baeef3210, type: 3}
   m_Name: Cliffs
   m_EditorClassIdentifier: 
-  biomeBody: {fileID: 0}
+  biomeBody: {fileID: 2193149610417719756, guid: c075740a4a57c0446b6aece226afdff3, type: 3}
   fusions:
   - fusionPartner: {fileID: 11400000, guid: 93484d4b87cf24d4fa3804e8e8649d04, type: 2}
     result: {fileID: 11400000, guid: 71e6504366d366047865f5d69aec3cfa, type: 2}
