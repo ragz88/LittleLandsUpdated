@@ -94,7 +94,7 @@ public class GridController : MonoBehaviour
     /// </summary>
     public void CheckGridState()
     {
-        Invoke("GridStateUpdated", 2f);
+        Invoke("GridStateUpdated", 3f);
     }
 
     void GridStateUpdated()
