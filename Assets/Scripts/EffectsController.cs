@@ -1,29 +1,54 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
-[CreateAssetMenu(fileName = "New Effects Controller", menuName = "Effects Controller")]
-public class EffectsController : ScriptableObject
+public class EffectsController : MonoBehaviour
 {
-    [System.Serializable]
-    public enum EffectType
+    AudioSource audioSource;
+
+    [SerializeField]
+    EffectsSettings effectsSettings;
+
+    public static EffectsController soundControllerInstance;
+
+    private void Awake()
     {
-        Freeze,
-        Burn,
-        Sandfall,
-        MountainRise,
-        Waterfall,
-        PlantGrowth,
-        Heatwave
+        if (soundControllerInstance == null)
+        {
+            soundControllerInstance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        audioSource = GetComponent<AudioSource>();
     }
 
-    [System.Serializable]
-    public struct EffectCollection
-    {
-        public EffectType type;
-        public GameObject effectPrefab;
-        public AudioClip soundEffect;
-    }
 
-    public EffectCollection[] effectCollections;
+    public void PlayMergeEffect(EffectsSettings.EffectType type, Vector3 position)
+    {
+        bool typeFound = false;
+
+        for (int i = 0; i < effectsSettings.effectCollections.Length; i++)
+        {
+            if (effectsSettings.effectCollections[i].type == type)
+            {
+                typeFound = true;
+                audioSource.PlayOneShot(effectsSettings.effectCollections[i].soundEffect);
+
+                if (effectsSettings.effectCollections[i].effectPrefab != null)
+                {
+                    Instantiate(effectsSettings.effectCollections[i].effectPrefab, position, Quaternion.identity);
+                }
+                break;
+            }
+        }
+
+        if (!typeFound)
+        {
+            Debug.LogError("Effect " + type.ToString() + " was not found. No sound played.");
+        }
+    }
 }

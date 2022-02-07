@@ -17,7 +17,8 @@ public class Biome : ScriptableObject
         /// <summary>
         /// The visual effect prefab that should spawn upon this fusion happening.
         /// </summary>
-        public GameObject effects;
+        [SerializeField]
+        public EffectsSettings.EffectType effects;
     }
 
     [SerializeField]

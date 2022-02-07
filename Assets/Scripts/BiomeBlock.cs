@@ -259,14 +259,15 @@ public class BiomeBlock : MonoBehaviour
                     // Initiate Fusion
                     // First, we locate the correct new biome to spawn
                     Biome newBiome = null;
-                    GameObject newBiomeFusionEffect = null;
+
+                    EffectsSettings.EffectType mergeEffectType = EffectsSettings.EffectType.Heatwave;
 
                     for (int i = 0; i < biome.fusions.Length; i++)
                     {
                         if (biome.fusions[i].fusionPartner == GridController.gridInstance.gridPositions[moveGridPosX, moveGridPosY].biomeBlock.biome)
                         {
                             newBiome = biome.fusions[i].result;
-                            newBiomeFusionEffect = biome.fusions[i].effects;
+                            mergeEffectType = biome.fusions[i].effects;
                             break;
                         }
                     }
@@ -277,13 +278,9 @@ public class BiomeBlock : MonoBehaviour
                     }
                     else
                     {
-                        // Instantiate effects for the fusion, if they exist
-                        if (newBiomeFusionEffect != null)
-                        {
-                            Instantiate(newBiomeFusionEffect,
-                                GridController.gridInstance.gridPositions[moveGridPosX, moveGridPosY].trans.position,
-                                Quaternion.identity);
-                        }
+                        // Play Merge Effects
+                        EffectsController.soundControllerInstance.PlayMergeEffect(mergeEffectType, 
+                            GridController.gridInstance.gridPositions[moveGridPosX, moveGridPosY].trans.position);
 
                         // Create the new biome and store it in the grid
                         GameObject newBiomeObj = Instantiate(newBiome.biomeBody, 
