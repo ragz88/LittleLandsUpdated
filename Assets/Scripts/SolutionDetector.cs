@@ -149,6 +149,7 @@ public class SolutionDetector : MonoBehaviour
 
     public void OnLevelSolved()
     {
+        GridController.gridInstance.levelCompleted = true;
         EffectsController.soundControllerInstance.PlayWinSound();
         inGameUI.SetActive(false);
         winScreen.SetActive(true);

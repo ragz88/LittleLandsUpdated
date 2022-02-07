@@ -11,6 +11,8 @@ public class HandFollow : MonoBehaviour
 
     public float xMultiplier, yMultiplier;
 
+    public float offsetX, offsetY;
+
     private void Start()
     {
         cam = Camera.main;
@@ -22,7 +24,7 @@ public class HandFollow : MonoBehaviour
     {
         Vector3 viewPortPoint = cam.ScreenToViewportPoint(Input.mousePosition);
 
-        transform.position = new Vector3(viewPortPoint.x * xMultiplier, viewPortPoint.y * yMultiplier, 0);
+        transform.position = new Vector3(viewPortPoint.x * xMultiplier + offsetX, viewPortPoint.y * yMultiplier + offsetY, 0);
 
         if (Input.GetMouseButton(0))
         {
