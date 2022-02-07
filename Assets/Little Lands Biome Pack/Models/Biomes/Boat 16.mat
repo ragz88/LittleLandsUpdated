@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boat 14
+  m_Name: Boat 16
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 2
@@ -119,6 +119,6 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.60784316, g: 0.086061105, b: 0.039215688, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 7.3772106, g: 1.1689235, b: 0.15449642, a: 1}
+    - _EmissionColor: {r: 16.94838, g: 2.750784, b: 0.35493988, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
