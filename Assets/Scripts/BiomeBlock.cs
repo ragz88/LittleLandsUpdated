@@ -295,6 +295,10 @@ public class BiomeBlock : MonoBehaviour
                         newBiomeBlock.myGridPosX = moveGridPosX;
                         newBiomeBlock.myGridPosX = moveGridPosY;
 
+
+                        // Check if level is solved or lost
+                        GridController.gridInstance.CheckGridState();
+
                         // Finally, we delete this biome block
                         Destroy(gameObject);
                     }
@@ -311,6 +315,7 @@ public class BiomeBlock : MonoBehaviour
             }
         }
     }
+
 
     private void OnMouseDown()
     {

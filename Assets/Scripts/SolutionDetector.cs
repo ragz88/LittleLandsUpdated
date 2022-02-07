@@ -16,7 +16,7 @@ public class SolutionDetector : MonoBehaviour
     [SerializeField]
     GameObject loseScreen;
 
-    bool[] solutionsFound;
+    public bool[] solutionsFound;
 
     private void Start()
     {
@@ -44,10 +44,13 @@ public class SolutionDetector : MonoBehaviour
             {
                 for (int j = 0; j < GridController.gridInstance.gridPositions.GetLength(1); j++)
                 {
-                    if (GridController.gridInstance.gridPositions[i,j].biomeBlock.biome == levelSolutions[k])
+                    if (GridController.gridInstance.gridPositions[i, j].biomeBlock != null)
                     {
-                        solutionsFound[k] = true;
-                        break;
+                        if (GridController.gridInstance.gridPositions[i, j].biomeBlock.biome == levelSolutions[k])
+                        {
+                            solutionsFound[k] = true;
+                            break;
+                        }
                     }
                 }
 
@@ -88,7 +91,7 @@ public class SolutionDetector : MonoBehaviour
                 if (GridController.gridInstance.gridPositions[i,j].biomeBlock != null)
                 {
                     // Check for match in positive z
-                    if (j != GridController.gridInstance.gridPositions.GetLength(1))
+                    if (j != GridController.gridInstance.gridPositions.GetLength(1) - 1)
                     {
                         if (GridController.gridInstance.gridPositions[i, j + 1].biomeBlock != null)
                         {
@@ -108,7 +111,7 @@ public class SolutionDetector : MonoBehaviour
                     }
 
                     // Check for match in positive x
-                    if (i != GridController.gridInstance.gridPositions.GetLength(0))
+                    if (i != GridController.gridInstance.gridPositions.GetLength(0) - 1)
                     {
                         if (GridController.gridInstance.gridPositions[i + 1, j].biomeBlock != null)
                         {

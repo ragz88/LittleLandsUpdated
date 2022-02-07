@@ -94,6 +94,11 @@ public class GridController : MonoBehaviour
     /// </summary>
     public void CheckGridState()
     {
+        Invoke("GridStateUpdated", 0.05f);
+    }
+
+    void GridStateUpdated()
+    {
         solutionDetector.CheckSolutions();
 
         if (!levelCompleted)
