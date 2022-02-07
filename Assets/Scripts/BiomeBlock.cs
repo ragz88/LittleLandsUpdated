@@ -96,6 +96,7 @@ public class BiomeBlock : MonoBehaviour
             if (biome == GridController.gridInstance.solutionDetector.levelSolutions[i])
             {
                 correctBiomeEffects.SetActive(true);
+                EffectsController.soundControllerInstance.PlaySmallWinSound();
             } 
         }
     }

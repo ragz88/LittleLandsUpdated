@@ -37,3 +37,6 @@ MonoBehaviour:
   - type: 7
     effectPrefab: {fileID: 3736969440974448661, guid: 4113089286ef3e04bad4469969f638b2, type: 3}
     soundEffect: {fileID: 8300000, guid: e36d4d8223e92a048b03e4c138ead9fe, type: 3}
+  winNoise: {fileID: 8300000, guid: 25b310f2cb1ba834e81bbeb92346a122, type: 3}
+  loseNoise: {fileID: 8300000, guid: efdeac6fc1a58e24eb54f43d71910658, type: 3}
+  smallWinNoise: {fileID: 8300000, guid: 86858ebd1e214ae4184321f50888b6eb, type: 3}

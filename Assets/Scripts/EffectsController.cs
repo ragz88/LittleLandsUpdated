@@ -8,7 +8,7 @@ public class EffectsController : MonoBehaviour
     AudioSource audioSource;
 
     [SerializeField]
-    EffectsSettings effectsSettings;
+    public EffectsSettings effectsSettings;
 
     public static EffectsController soundControllerInstance;
 
@@ -27,6 +27,22 @@ public class EffectsController : MonoBehaviour
     }
 
 
+    public void PlayWinSound()
+    {
+        audioSource.PlayOneShot(effectsSettings.winNoise, 1);
+    }
+
+    public void PlayLoseSound()
+    {
+        audioSource.PlayOneShot(effectsSettings.loseNoise, 1);
+    }
+
+    public void PlaySmallWinSound()
+    {
+        audioSource.PlayOneShot(effectsSettings.smallWinNoise, 1);
+    }
+
+
     public void PlayMergeEffect(EffectsSettings.EffectType type, Vector3 position)
     {
         bool typeFound = false;
@@ -36,7 +52,7 @@ public class EffectsController : MonoBehaviour
             if (effectsSettings.effectCollections[i].type == type)
             {
                 typeFound = true;
-                audioSource.PlayOneShot(effectsSettings.effectCollections[i].soundEffect);
+                audioSource.PlayOneShot(effectsSettings.effectCollections[i].soundEffect, 0.4f);
 
                 if (effectsSettings.effectCollections[i].effectPrefab != null)
                 {

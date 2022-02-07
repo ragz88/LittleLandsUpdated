@@ -146,12 +146,13 @@ public class SolutionDetector : MonoBehaviour
 
     public void OnLevelSolved()
     {
-        
+        EffectsController.soundControllerInstance.PlayWinSound();
         winScreen.SetActive(true);
     }
 
     public void OnLevelLost()
     {
+        EffectsController.soundControllerInstance.PlayLoseSound();
         loseScreen.SetActive(true);
     }
 }
