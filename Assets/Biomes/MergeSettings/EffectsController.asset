@@ -21,13 +21,13 @@ MonoBehaviour:
     soundEffect: {fileID: 8300000, guid: 99413931cdb1d3e43be275c560dcd890, type: 3}
   - type: 2
     effectPrefab: {fileID: 3736969440974448661, guid: 4113089286ef3e04bad4469969f638b2, type: 3}
-    soundEffect: {fileID: 8300000, guid: 07f24ac4624592245a696490d8da66f5, type: 3}
+    soundEffect: {fileID: 8300000, guid: 7995b7ded03031f4b8ac429834d30301, type: 3}
   - type: 3
     effectPrefab: {fileID: 3736969440974448661, guid: 4113089286ef3e04bad4469969f638b2, type: 3}
     soundEffect: {fileID: 8300000, guid: 81afdde6ebec4fb489f456a71b02e0cd, type: 3}
   - type: 4
     effectPrefab: {fileID: 3736969440974448661, guid: 4113089286ef3e04bad4469969f638b2, type: 3}
-    soundEffect: {fileID: 8300000, guid: dfccc7bd5cacf78488fa7ce805d2b179, type: 3}
+    soundEffect: {fileID: 8300000, guid: 34b6153949baf1345a73709831ea8daa, type: 3}
   - type: 5
     effectPrefab: {fileID: 3736969440974448661, guid: 4113089286ef3e04bad4469969f638b2, type: 3}
     soundEffect: {fileID: 8300000, guid: 05ba02f0d8002d845890344accd564f1, type: 3}
@@ -36,4 +36,4 @@ MonoBehaviour:
     soundEffect: {fileID: 8300000, guid: d8185ef81a04e2f4da0a446e475099dc, type: 3}
   - type: 7
     effectPrefab: {fileID: 3736969440974448661, guid: 4113089286ef3e04bad4469969f638b2, type: 3}
-    soundEffect: {fileID: 8300000, guid: 32c0780293161cb478d2925177562341, type: 3}
+    soundEffect: {fileID: 8300000, guid: e36d4d8223e92a048b03e4c138ead9fe, type: 3}
