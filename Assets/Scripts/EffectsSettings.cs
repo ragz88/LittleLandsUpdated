@@ -27,4 +27,10 @@ public class EffectsSettings : ScriptableObject
     }
 
     public EffectCollection[] effectCollections;
+
+
+    public AudioClip winNoise;
+    public AudioClip loseNoise;
+    public AudioClip smallWinNoise;
+
 }
