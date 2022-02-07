@@ -870,6 +870,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8314769711817498338, guid: a5e437dcc1761a24dbd714d2bb9d3161, type: 3}
+      propertyPath: inGameUI
+      value: 
+      objectReference: {fileID: 1143428715}
+    - target: {fileID: 8314769711817498338, guid: a5e437dcc1761a24dbd714d2bb9d3161, type: 3}
       propertyPath: winScreen
       value: 
       objectReference: {fileID: 1961909393}
