@@ -97,6 +97,7 @@ public class BiomeBlock : MonoBehaviour
             {
                 correctBiomeEffects.SetActive(true);
                 EffectsController.soundControllerInstance.PlaySmallWinSound();
+                break;
             } 
         }
     }
