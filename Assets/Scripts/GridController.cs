@@ -30,7 +30,7 @@ public class GridController : MonoBehaviour
     public static GridController gridInstance;
 
 
-    SolutionDetector solutionDetector;
+    public SolutionDetector solutionDetector;
 
     /*private void Awake()
     {
