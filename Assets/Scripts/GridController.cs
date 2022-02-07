@@ -30,7 +30,7 @@ public class GridController : MonoBehaviour
     public static GridController gridInstance;
 
 
-    SolutionDetector solutionDetector;
+    public SolutionDetector solutionDetector;
 
     /*private void Awake()
     {
@@ -93,6 +93,11 @@ public class GridController : MonoBehaviour
     /// Checks if the player has won. If not, checks whether they can continue playing or not.
     /// </summary>
     public void CheckGridState()
+    {
+        Invoke("GridStateUpdated", 0.05f);
+    }
+
+    void GridStateUpdated()
     {
         solutionDetector.CheckSolutions();
 

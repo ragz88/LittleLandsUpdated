@@ -6,6 +6,8 @@ public class BiomeBlock : MonoBehaviour
 {
     public Biome biome;
 
+    public GameObject correctBiomeEffects;
+
     [SerializeField]
     protected float onSelectScaleIncrease = 1.2f;
 
@@ -88,6 +90,14 @@ public class BiomeBlock : MonoBehaviour
         {
             GridController.gridInstance.gridPositions[myGridPosX, myGridPosY].biomeBlock = this;
         }*/
+
+        for (int i = 0; i <  GridController.gridInstance.solutionDetector.levelSolutions.Length; i++)
+        {
+            if (biome == GridController.gridInstance.solutionDetector.levelSolutions[i])
+            {
+                correctBiomeEffects.SetActive(true);
+            } 
+        }
     }
 
     // Update is called once per frame
@@ -295,6 +305,10 @@ public class BiomeBlock : MonoBehaviour
                         newBiomeBlock.myGridPosX = moveGridPosX;
                         newBiomeBlock.myGridPosX = moveGridPosY;
 
+
+                        // Check if level is solved or lost
+                        GridController.gridInstance.CheckGridState();
+
                         // Finally, we delete this biome block
                         Destroy(gameObject);
                     }
@@ -311,6 +325,7 @@ public class BiomeBlock : MonoBehaviour
             }
         }
     }
+
 
     private void OnMouseDown()
     {
