@@ -16,6 +16,9 @@ public class SolutionDetector : MonoBehaviour
     [SerializeField]
     GameObject loseScreen;
 
+    [SerializeField]
+    GameObject inGameUI;
+
     public bool[] solutionsFound;
 
     private void Start()
@@ -147,12 +150,14 @@ public class SolutionDetector : MonoBehaviour
     public void OnLevelSolved()
     {
         EffectsController.soundControllerInstance.PlayWinSound();
+        inGameUI.SetActive(false);
         winScreen.SetActive(true);
     }
 
     public void OnLevelLost()
     {
         EffectsController.soundControllerInstance.PlayLoseSound();
+        inGameUI.SetActive(false);
         loseScreen.SetActive(true);
     }
 }
